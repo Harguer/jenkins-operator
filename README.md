@@ -1,4 +1,4 @@
-# jenkins-operator V0.7 running in k3s
+# jenkins-operator V0.7 running in k3s (could work in any other kubernetes cluster)
 This Setup is for K3s running in 1 node, this is just for educational purpuse
  - Create namespace jenkins
  - Install the CRD
