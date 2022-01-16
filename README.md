@@ -8,7 +8,7 @@ This Setup is for K3s running in 1 node, this is just for educational purpuse
  - Create a ConfigMap (I did not have the time to configure ldpap and the authorization stuff, will try to do it later)
  - Install jenkins pod instance with base plugins, seed jobs and the backup settings for the jobs
 
-# Installing the operator, follow the instructions [here] (https://jenkinsci.github.io/kubernetes-operator/docs/getting-started/latest/installing-the-operator/) or copy paste these two commands:  
+# Installing the operator, follow the instructions [here](https://jenkinsci.github.io/kubernetes-operator/docs/getting-started/latest/installing-the-operator/) or copy paste these two commands:  
 ```
 kubectl create namespace jenkins
 kubens jenkins
@@ -17,7 +17,7 @@ kubectl apply -f https://raw.githubusercontent.com/jenkinsci/kubernetes-operator
 kubectl get pods
 ```
 
-# updated rbac.yaml  [here] (https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/deploy/rbac.yaml)
+# updated rbac.yaml  [here](https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/deploy/rbac.yaml)
 
 # To have a backups feature enabled enable NFS locally in your cluster
 ```
