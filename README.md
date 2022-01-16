@@ -114,6 +114,6 @@ kubectl get secrets jenkins-operator-credentials-jenkins -o jsonpath={.data.pass
 ```
 
 # open a web browser and copy the ip from `kubectl get svc` paste it in browser and use port 8080, use jenkins-operator and the password above   
-![alt text](https://github.com/[Harguer]/jenkins-confs/blob/master/jenkins-screenshot.png?raw=true)
+![alt text](https://github.com/Harguer/jenkins-operator/blob/main/jenkins-screenshot.png?raw=true)
 
 
