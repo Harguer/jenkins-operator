@@ -8,7 +8,7 @@ This Setup is for K3s running in 1 node, this is just for educational purpuse
  - Create a ConfigMap (I did not have the time to configure ldpap and the authorization stuff, will try to do it later)
  - Install jenkins pod instance with base plugins, seed jobs and the backup settings for the jobs
 
-# Installing the operator, follow the instructions [here](https://jenkinsci.github.io/kubernetes-operator/docs/getting-started/latest/installing-the-operator/) or copy paste these two commands:  
+## Installing the operator, follow the instructions [here](https://jenkinsci.github.io/kubernetes-operator/docs/getting-started/latest/installing-the-operator/) or copy paste these two commands:  
 ```
 kubectl create namespace jenkins
 kubens jenkins
@@ -17,7 +17,7 @@ kubectl apply -f https://raw.githubusercontent.com/jenkinsci/kubernetes-operator
 kubectl get pods
 ```
 
-# updated rbac.yaml  [here](https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/deploy/rbac.yaml)
+## updated rbac.yaml  [here](https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/deploy/rbac.yaml)
 
 ## To have a backups feature, enable NFS locally in your server/machine 
 ```
@@ -35,7 +35,7 @@ kubectl apply -f configmap.yaml
 kubectl apply -f jenkins_instance.yaml
 ```
 
-# deploying it:
+## Deploying it:
 ```
 [jenkins@local]$ 
 [jenkins@local]$ time while read line;do echo doing $line; $line; sleep 1;echo; done < <(egrep "kubectl|kubens" README.md)
@@ -114,12 +114,12 @@ jenkins.jenkins.io/jenkins   5m44s
 [jenkins@local]$ 
 ```
 
-# extrat jenkins-operator password from the secret
+## Extract jenkins-operator password from the secret
 ```
 kubectl get secrets jenkins-operator-credentials-jenkins -o jsonpath={.data.password}| base64 -d ;echo
 ```
 
-# open a web browser and copy the ip from `kubectl get svc` paste it in browser and use port 8080, use jenkins-operator and the password above   
+## Open a web browser and copy the ip from `kubectl get svc` paste it in browser and use port 8080, use jenkins-operator and the password above   
 ![alt text](https://github.com/Harguer/jenkins-operator/blob/main/jenkins-screenshot.png?raw=true)
 
 
