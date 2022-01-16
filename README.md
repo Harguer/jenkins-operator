@@ -19,8 +19,14 @@ kubectl get pods
 
 # updated rbac.yaml  [here](https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/deploy/rbac.yaml)
 
-# To have a backups feature enabled enable NFS locally in your cluster
+## To have a backups feature, enable NFS locally in your server/machine 
 ```
+mkdir /nfs-vol
+chmod 777 /nfs-vol
+echo '/nfs-vol *(rw,sync,no_subtree_check,no_root_squash)' >> /etc/exports
+systemctl enable nfs-server.service
+systemctl start nfs-server.service
+
 kubectl apply -f nfs_class.yaml
 kubectl apply -f rbac.yaml
 kubectl apply -f pv.yaml
